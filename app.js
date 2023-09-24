@@ -10,6 +10,7 @@ require("./db/mongoConnect")
 const app = express();
 // כדי שנוכל לשלוח באדי מצד לקוח
 app.use(cors())
+app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(express.json());
 // להגדיר תיקייה סטטית שתיהיה התיקייה בשם פאבליק
 app.use(express.static(path.join(__dirname,"public")));
