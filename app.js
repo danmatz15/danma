@@ -3,13 +3,6 @@ const http = require("http");
 const path = require("path");
 const cors = require("cors");
 
-const { MongoClient } = require('mongodb');
-const express = require('express');
-
-
-
-const uri = process.env.MONGO_CONNECTION_STRING;
-const client = new MongoClient(uri);
 const {routesInit} = require("./routes/configRoutes")
 // התחברות למסד 
 require("./db/mongoConnect")
