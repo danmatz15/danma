@@ -1,8 +1,11 @@
 const express = require("express");
 const { AnimalModel, validateAnimal } = require("../models/animalModel");
 const { auth } = require("../middlewares/auth");
+const { route } = require(".");
 const router = express.Router();
-
+router.get("/small",async(req,res)=>{
+  res.json("all goodddd")
+})
 router.get("/", async(req,res) => {
   try{
     let data = await AnimalModel.find({}).limit(20).sort({date:1});
