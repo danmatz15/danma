@@ -5,7 +5,7 @@ main().catch(err => console.log(err));
 async function main() {
   mongoose.set('strictQuery', false);
  
-  await mongoose.connect('mongodb+srv://'+config. userDb+':'+config.passDb+'@cluster0.of9f1ec.mongodb.net/');
+  await mongoose.connect('mongodb+srv://'+config. userDb+':'+config.passDb+'@cluster0.of9f1ec.mongodb.net/dan');
   console.log("mongo connect monkeys2 local");
 
 
