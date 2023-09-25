@@ -28,6 +28,10 @@ router.post("/",async(req,res) => {
     // הצפנה חד כיוונית לסיסמא ככה 
     // שלא תשמר על המסד כמו שהיא ויהיה ניתן בקלות
     // לגנוב אותה
+    const existingUser = await UserModel.findOne({ email: req.body.email });
+    if (existingUser) {
+      return res.status(400).json({ msg: "Email already in system try login", code: 11000 });
+    }
     user.password = await bcrypt.hash(user.password, 10)
     await user.save();
     // כדי להציג לצד לקוח סיסמא אנונימית
